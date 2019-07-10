@@ -1,7 +1,11 @@
 language: c
 sudo: required
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
-script: bash -ex .travis-opam.sh
+script:
+  - bash -ex .travis-opam.sh
+  - bash opam pin add my-package .
+  - bash opam install my-package
+  - bash opam remove my-package
 env:
   global:
   - PACKAGE=re
