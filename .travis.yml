@@ -4,12 +4,12 @@ install:
   - sudo add-apt-repository --yes ppa:avsm/ppa
   - sudo apt-get --assume-yes update
   - sudo apt-get --assume-yes install opam
-  - opam init
-  - opam switch create ocaml-base-compiler.$OCAML_VERSION || true
+  - opam init --yes
+  - opam switch --yes create ocaml-base-compiler.$OCAML_VERSION || true
 script:
-  - opam pin add my-package .
-  - opam install my-package
-  - opam remove my-package
+  - opam pin --yes add my-package .
+  - opam install --yes my-package
+  - opam remove --yes my-package
 env:
   global:
   - PACKAGE=re
