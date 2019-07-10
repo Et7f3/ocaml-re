@@ -1,7 +1,7 @@
 language: c
 sudo: required
 install:
-  - sudo add-apt-repository ppa:avsm/ppa
+  - sudo add-apt-repository --yes ppa:avsm/ppa
   - sudo apt-get --assume-yes update
   - sudo apt-get --assume-yes install opam
   - opam init
