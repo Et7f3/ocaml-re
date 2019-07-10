@@ -3,18 +3,15 @@ sudo: required
 install: wget https://raw.githubusercontent.com/ocaml/ocaml-ci-scripts/master/.travis-opam.sh
 script:
   - bash -ex .travis-opam.sh
-  - bash opam pin add my-package .
-  - bash opam install my-package
-  - bash opam remove my-package
+  - opam init
+  - opam switch create ocaml-base-compiler.$OCAML_VERSION || true
+  - opam pin add my-package .
+  - opam install my-package
+  - opam remove my-package
 env:
   global:
   - PACKAGE=re
   matrix:
   - OCAML_VERSION=4.02
-  - OCAML_VERSION=4.03
-  - OCAML_VERSION=4.04
-  - OCAML_VERSION=4.05
-  - OCAML_VERSION=4.06
 os:
   - linux
-  - osx
