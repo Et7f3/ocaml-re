@@ -6,9 +6,9 @@ install:
   - sudo apt-get --assume-yes install opam
   - opam init --yes --compiler=ocaml-base-compiler.$OCAML_VERSION --switch=ocaml-base-compiler.$OCAML_VERSION
 script:
-  - opam pin --yes add my-package .
-  - opam install --yes my-package
-  - opam remove --yes my-package
+  - opam pin --yes add re .
+  - opam install --yes re
+  - opam remove --yes re
 env:
   global:
   - PACKAGE=re
